@@ -27,6 +27,7 @@
     "jest-canvas-mock": "^2.4.0",
     "jest-environment-jsdom": "^29.5.0",
     "jest-junit": "^15.0.0",
+    "jest-location-mock": "^1.0.9",
     "jsdom": "^21.1.0"
   }
 }
