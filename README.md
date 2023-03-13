@@ -5,11 +5,49 @@ This package provides an extensible shared [jest](https://github.com/facebook/je
 ## Installation
 Add this project as a dev-dependency of your project.
 
-Create `jest.config.js` in the root of your project. Its contents:
+Create `./test/jest/babel.config.js`. This file defines the babel-transforms that will affect each file.
 ```
-import config from '@folio/jest-config-stripes';
+const { babelOptions } = require('@folio/stripes-cli');
 
-module.exports = { ...config };
+babelOptions.plugins.push([
+  'babel-plugin-module-resolver',
+  {
+    root: ['./'],
+    alias: {
+      __mock__: './test/jest/__mock__',
+      fixtures: './test/jest/fixtures',
+      helpers: './test/jest/helpers',
+    },
+  },
+]);
+
+module.exports = {
+  ...babelOptions,
+};
+```
+Create `./test/jest/jest-transformer.js` that leverages `babel.config.js` to tell jest how to configure babel:
+```
+const babelJest = require('babel-jest');
+const babelConfig = require('./babel.config');
+
+module.exports = babelJest.createTransformer(babelConfig);
+```
+Create `./test/jest/jest.setup.js`. This file is essentially a `beforeEach` block that runs before each test; it is a convenient place to include boilerplate code to avoid repeating it in every test file.
+```
+import '@testing-library/jest-dom';
+import 'regenerator-runtime/runtime';
+// import './__mock__'; // optional, but convenient
+```
+Finally, create `./jest.config.js` that knits all this together:
+```
+const path = require('path');
+const config = require('@folio/jest-config-stripes');
+
+module.exports = {
+  ...config,
+  setupFilesAfterEnv: [path.join(__dirname, './test/jest/jest.setup.js')],
+  transform: { '^.+\\.(js|jsx)$': path.join(__dirname, './test/jest/jest-transformer.js') },
+};
 ```
 
 ## Usage

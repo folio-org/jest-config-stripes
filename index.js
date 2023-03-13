@@ -16,19 +16,18 @@ module.exports = {
   ],
   coverageDirectory: './artifacts/coverage-jest/',
   coverageReporters: ['lcov'],
-  reporters: ['jest-junit', 'default'],
-  transform: { '^.+\\.(js|jsx)$': path.join(__dirname, './test/jest/jest-transformer.js') },
-  transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
   moduleNameMapper: {
     '^.+\\.(css|png|svg)$': 'identity-obj-proxy',
   },
-  testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx}'],
-  testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
+  reporters: ['jest-junit', 'default'],
   setupFiles: [
     // setupTests.js is a helpful place to put global configuration,
     // but not all repositories have this file in place.
     // path.join(__dirname, './test/jest/setupTests.js'),
-    'jest-canvas-mock'
+    'jest-canvas-mock',
+    'jest-location-mock',
   ],
-  setupFilesAfterEnv: [path.join(__dirname, './test/jest/jest.setup.js')],
+  testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx}'],
+  testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
+  transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 };
