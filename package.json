@@ -1,0 +1,32 @@
+{
+  "name": "@folio/jest-config-stripes",
+  "version": "1.0.0",
+  "description": "The shared jest configuration for stripes applications and extensions",
+  "main": "index.js",
+  "repository": "https://github.com/folio-org/jest-config-stripes",
+  "publishConfig": {
+    "registry": "https://repository.folio.org/repository/npm-folio/"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=16.10.0"
+  },
+  "keywords": [
+    "jest",
+    "test",
+    "testing-library"
+  ],
+  "dependencies": {
+    "@jest/globals": "^29.5.0",
+    "@testing-library/dom": "^9.0.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^12.1.5",
+    "@testing-library/user-event": "^12.1.10",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "jest-canvas-mock": "^2.4.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-junit": "^15.0.0",
+    "jsdom": "^21.1.0"
+  }
+}
