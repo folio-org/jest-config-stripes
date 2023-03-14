@@ -1,54 +1,37 @@
 # jest-config-stripes
 
-This package provides an extensible shared [jest](https://github.com/facebook/jest) config, intended to promote consistent code style and facilitate maintenance by consolidating test-related dependencies.
+This package provides an extensible shared [jest](https://github.com/facebook/jest) config, intended to promote consistent code style and facilitate maintenance by consolidating and aligning test-related dependencies to make sure they are up to date, compatible with other packages we use (e.g. particular versions of React) and compatible with each other.
 
 ## Installation
 Add this project as a dev-dependency of your project.
 
-Create `./test/jest/babel.config.js`. This file defines the babel-transforms that will affect each file.
+Create `./jest.config.js`:
 ```
-const { babelOptions } = require('@folio/stripes-cli');
+const path = require('path');
+const config = require('@folio/jest-config-stripes');
 
-babelOptions.plugins.push([
-  'babel-plugin-module-resolver',
-  {
-    root: ['./'],
-    alias: {
-      __mock__: './test/jest/__mock__',
-      fixtures: './test/jest/fixtures',
-      helpers: './test/jest/helpers',
-    },
-  },
-]);
+module.exports = { ...config };
+```
+Remove any dev-dep from your project related to `jest` or `@testing-library`.
 
-module.exports = {
-  ...babelOptions,
-};
+Jest is [highly configurable](https://jestjs.io/docs/configuration). One common option is to automatically include your mocks by adding them via `setupFiles`, a list of whose code essentially functions like `beforeEach` block that runs before each test.
 ```
-Create `./test/jest/jest-transformer.js` that leverages `babel.config.js` to tell jest how to configure babel:
-```
-const babelJest = require('babel-jest');
-const babelConfig = require('./babel.config');
+// ./test/jest/jest-setupFiles.js
+import './__mock__';
 
-module.exports = babelJest.createTransformer(babelConfig);
-```
-Create `./test/jest/jest.setup.js`. This file is essentially a `beforeEach` block that runs before each test; it is a convenient place to include boilerplate code to avoid repeating it in every test file.
-```
-import '@testing-library/jest-dom';
-import 'regenerator-runtime/runtime';
-// import './__mock__'; // optional, but convenient
-```
-Finally, create `./jest.config.js` that knits all this together:
-```
+// ./jest.config.js
 const path = require('path');
 const config = require('@folio/jest-config-stripes');
 
 module.exports = {
   ...config,
-  setupFilesAfterEnv: [path.join(__dirname, './test/jest/jest.setup.js')],
-  transform: { '^.+\\.(js|jsx)$': path.join(__dirname, './test/jest/jest-transformer.js') },
+  setupFiles: [
+    ...config.setupFiles,
+    path.join(__dirname, './test/jest/setupFiles.js'),
+  ],
 };
 ```
+Any of the keys present in the `index.js` file here may be similarly extended (or replaced) in your application's `jest.config.js` file.
 
 ## Usage
 * Run `yarn jest` in your terminal to discover test files in the `src` and `lib` directories and run those tests.

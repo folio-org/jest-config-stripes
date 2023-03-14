@@ -21,13 +21,16 @@ module.exports = {
   },
   reporters: ['jest-junit', 'default'],
   setupFiles: [
-    // setupTests.js is a helpful place to put global configuration,
-    // but not all repositories have this file in place.
-    // path.join(__dirname, './test/jest/setupTests.js'),
+    path.join(__dirname, './jest-setupFiles.js'),
     'jest-canvas-mock',
+  ],
+  setupFilesAfterEnv: [
+    path.join(__dirname, './jest-setupFilesAfterEnv.js'),
     'jest-location-mock',
   ],
+  testEnvironment: 'jsdom',
   testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx}'],
   testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
+  transform: { '^.+\\.(js|jsx)$': path.join(__dirname, './jest-transformer.js') },
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
 };
