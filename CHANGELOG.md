@@ -2,4 +2,5 @@
 
 ## 1.0.0 IN PROGRESS
 
-* Provide jest v29, @testing-library/react v12, and related deps.
+* Provide `jest` v29, `@testing-library/*`, and related deps.
+* Re-export `@testing-library/*`.
