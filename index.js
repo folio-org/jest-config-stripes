@@ -9,6 +9,8 @@ const path = require('path');
 const esModules = [
   '@folio',
   '@json2csv',
+  'decode-uri-component',
+  'filter-obj',
   'find-up',
   'get-stdin',
   'global-dirs',
@@ -19,7 +21,8 @@ const esModules = [
   'query-string',
   'resolve-from',
   'resolve-pkg',
-  'uuid'
+  'split-on-first',
+  'uuid',
 ].join('|');
 
 module.exports = {
