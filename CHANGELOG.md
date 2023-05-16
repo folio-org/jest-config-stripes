@@ -4,3 +4,4 @@
 
 * Provide `jest` v29, `@testing-library/*`, and related deps.
 * Re-export `@testing-library/*`.
+* Keep a list of pure-ESM modules which must be transpiled for jest.

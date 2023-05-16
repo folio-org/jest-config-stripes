@@ -6,7 +6,21 @@ const path = require('path');
 // on publish. this list puts things _back_ on the list of those needing
 // transpilation and includes any module that is distributed uncompiled
 // as pure-ESM.
-const esModules = ['@folio', '@json2csv', 'ky', 'uuid'].join('|');
+const esModules = [
+  '@folio',
+  '@json2csv',
+  'find-up',
+  'get-stdin',
+  'global-dirs',
+  'import-lazy',
+  'inquirer',
+  'is-path-inside',
+  'ky',
+  'query-string',
+  'resolve-from',
+  'resolve-pkg',
+  'uuid'
+].join('|');
 
 module.exports = {
   collectCoverageFrom: [
