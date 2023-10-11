@@ -1,6 +1,7 @@
 # Change history for jest-config-stripes
 
-## 2.0.0
+## [2.0.0](https://github.com/folio-org/eslint-config-stripes/tree/v2.0.0) (2023-10-11)
+[Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v1.0.0...v2.0.0)
 
 * BREAKING @testing-library/dom 9
 * BREAKING @testing-library/react 14
