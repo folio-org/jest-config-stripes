@@ -2,6 +2,7 @@
 
 ## 2.1.0 IN PROGRESS
 
+* Export `esModules`, allowing consumers to leverage it in their own `transformIgnorePatterns` config.
 * Transform `ts`, `tsx` files in addition to `js`, `jsx`.
 
 ## [2.0.0](https://github.com/folio-org/eslint-config-stripes/tree/v2.0.0) (2023-10-11)
