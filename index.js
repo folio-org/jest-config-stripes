@@ -33,7 +33,6 @@ module.exports = {
   ],
   coverageDirectory: './artifacts/coverage-jest/',
   coverageReporters: ['lcov'],
-  esModules,
   moduleNameMapper: {
     '^.+\\.(css|png|svg)$': 'identity-obj-proxy',
   },
