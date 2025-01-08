@@ -11,3 +11,4 @@ jobs:
     with:
       jest-enabled: false
       sonar-enabled: false
+      compile-translations: false
