@@ -1,6 +1,6 @@
 {
   "name": "@folio/jest-config-stripes",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "The shared jest configuration for stripes applications and extensions",
   "main": "index.js",
   "repository": "https://github.com/folio-org/jest-config-stripes",
@@ -17,6 +17,7 @@
     "testing-library"
   ],
   "dependencies": {
+    "@folio/stripes-webpack": "^6.0.0",
     "@jest/globals": "^29.5.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
