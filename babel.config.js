@@ -1,4 +1,4 @@
-const { babelOptions } = require('@folio/stripes-cli');
+const { babelOptions } = require('@folio/stripes-webpack');
 
 babelOptions.plugins.push([
   'babel-plugin-module-resolver',
