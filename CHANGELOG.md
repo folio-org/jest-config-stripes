@@ -1,5 +1,10 @@
 # Change history for jest-config-stripes
 
+## [3.0.1](https://github.com/folio-org/eslint-config-stripes/tree/v3.0.1) (2025-02-24)
+[Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v3.0.0...v3.0.1)
+
+* Operational changes only: do not attempt to publish non-existent module descriptor.
+
 ## [3.0.0](https://github.com/folio-org/eslint-config-stripes/tree/v3.0.0) (2025-02-24)
 [Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v2.0.0...v3.0.0)
 
