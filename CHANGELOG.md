@@ -1,6 +1,7 @@
 # Change history for jest-config-stripes
 
-## 3.0.0 IN PROGRESS
+## [3.0.0](https://github.com/folio-org/eslint-config-stripes/tree/v3.0.0) (2025-02-24)
+[Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v2.0.0...v3.0.0)
 
 * Transform `ts`, `tsx` files in addition to `js`, `jsx`.
 * *BREAKING* @folio/stripes-webpack 6
