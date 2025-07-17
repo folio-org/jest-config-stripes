@@ -17,7 +17,7 @@
     "testing-library"
   ],
   "dependencies": {
-    "@folio/stripes-webpack": "^6.0.0",
+    "@folio/stripes-webpack": "^6.0.1",
     "@jest/globals": "^29.5.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
