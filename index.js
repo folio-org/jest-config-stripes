@@ -17,6 +17,7 @@ const esModules = [
   'import-lazy',
   'inquirer',
   'is-path-inside',
+  'jspdf',
   'ky',
   'query-string',
   'resolve-from',
