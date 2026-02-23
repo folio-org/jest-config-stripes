@@ -33,5 +33,8 @@
     "jest-junit": "^16.0.0",
     "jest-location-mock": "^1.0.9",
     "jsdom": "^22.1.0"
+  }, 
+  "resolutions": {
+    "@types/jest": "^29.5.14"
   }
 }
