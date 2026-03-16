@@ -47,7 +47,7 @@ module.exports = {
     'jest-location-mock',
   ],
   testEnvironment: 'jsdom',
-  testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx,tx,tsx}'],
+  testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx,ts,tsx}'],
   testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
   transform: { '^.+\\.(js|jsx|ts|tsx)$': path.join(__dirname, './jest-transformer.js') },
   transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
