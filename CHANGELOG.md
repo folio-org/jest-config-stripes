@@ -3,6 +3,7 @@
 ## 3.1.0 IN PROGRESS
 
 * Want to reexport `@testing-library/react-hooks`? Better depend on it. Refs STRIPES-1014.
+* Fix typo, allowing .ts test files to be properly recognized.
 
 ## [3.0.2](https://github.com/folio-org/eslint-config-stripes/tree/v3.0.2) (2025-02-24)
 [Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v3.0.2...v3.0.1)
