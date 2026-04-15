@@ -1,6 +1,6 @@
 # Change history for jest-config-stripes
 
-## 3.1.0 IN PROGRESS
+## [3.1.0](https://github.com/folio-org/eslint-config-stripes/tree/v3.1.0) (2026-04-15)
 
 * Want to reexport `@testing-library/react-hooks`? Better depend on it. Refs STRIPES-1014.
 * Fix typo, allowing .ts test files to be properly recognized.
