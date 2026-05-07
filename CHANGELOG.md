@@ -5,6 +5,7 @@
 * Want to reexport `@testing-library/react-hooks`? Better depend on it. Refs STRIPES-1014.
 * Fix typo, allowing .ts test files to be properly recognized.
 * Ship TypeScript declarations for `testing-library/*` re-exports. Refs STRIPES-1020.
+* Align `collectCoverageFrom` extensions with `testMatch` to include `.ts` and `.tsx`. Refs STRIPES-1021.
 
 ## [3.0.2](https://github.com/folio-org/eslint-config-stripes/tree/v3.0.2) (2025-02-24)
 [Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v3.0.2...v3.0.1)

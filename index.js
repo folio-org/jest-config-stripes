@@ -28,7 +28,7 @@ const esModules = [
 
 module.exports = {
   collectCoverageFrom: [
-    '**/(lib|src)/**/*.{js,jsx}',
+    '**/(lib|src)/**/*.{js,jsx,ts,tsx}',
     '!**/node_modules/**',
     '!**/test/jest/**',
   ],
