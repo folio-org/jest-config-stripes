@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const path = require('path');
+const axe = require('axe-core');
 
 // jest ignores the contents of node_modules when pulling things through
 // babel for transpilation, assuming that modules have been transpiled
@@ -27,28 +28,31 @@ const esModules = [
 ].join('|');
 
 module.exports = {
-  collectCoverageFrom: [
-    '**/(lib|src)/**/*.{js,jsx,ts,tsx}',
-    '!**/node_modules/**',
-    '!**/test/jest/**',
-  ],
-  coverageDirectory: './artifacts/coverage-jest/',
-  coverageReporters: ['lcov'],
-  moduleNameMapper: {
-    '^.+\\.(css|png|svg)$': 'identity-obj-proxy',
-  },
-  reporters: ['jest-junit', 'default'],
-  setupFiles: [
-    path.join(__dirname, './jest-setupFiles.js'),
-    'jest-canvas-mock',
-  ],
-  setupFilesAfterEnv: [
-    path.join(__dirname, './jest-setupFilesAfterEnv.js'),
-    'jest-location-mock',
-  ],
-  testEnvironment: 'jsdom',
-  testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx,ts,tsx}'],
-  testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
-  transform: { '^.+\\.(js|jsx|ts|tsx)$': path.join(__dirname, './jest-transformer.js') },
-  transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+  axe,
+  config: {
+    collectCoverageFrom: [
+      '**/(lib|src)/**/*.{js,jsx,ts,tsx}',
+      '!**/node_modules/**',
+      '!**/test/jest/**',
+    ],
+    coverageDirectory: './artifacts/coverage-jest/',
+    coverageReporters: ['lcov'],
+    moduleNameMapper: {
+      '^.+\\.(css|png|svg)$': 'identity-obj-proxy',
+    },
+    reporters: ['jest-junit', 'default'],
+    setupFiles: [
+      path.join(__dirname, './jest-setupFiles.js'),
+      'jest-canvas-mock',
+    ],
+    setupFilesAfterEnv: [
+      path.join(__dirname, './jest-setupFilesAfterEnv.js'),
+      'jest-location-mock',
+    ],
+    testEnvironment: 'jsdom',
+    testMatch: ['**/(lib|src)/**/?(*.)test.{js,jsx,ts,tsx}'],
+    testPathIgnorePatterns: ['/node_modules/', '/test/bigtest/', '/test/ui-testing/'],
+    transform: { '^.+\\.(js|jsx|ts|tsx)$': path.join(__dirname, './jest-transformer.js') },
+    transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+  }
 };
