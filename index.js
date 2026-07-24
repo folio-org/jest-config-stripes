@@ -1,6 +1,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const path = require('path');
 const axe = require('axe-core');
+const { runAxeTest } = require('./lib/runAxeTest');
 
 // jest ignores the contents of node_modules when pulling things through
 // babel for transpilation, assuming that modules have been transpiled
@@ -29,6 +30,7 @@ const esModules = [
 
 module.exports = {
   axe,
+  runAxeTest,
   config: {
     collectCoverageFrom: [
       '**/(lib|src)/**/*.{js,jsx,ts,tsx}',
