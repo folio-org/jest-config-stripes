@@ -9,7 +9,7 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=16.10.0"
+    "node": ">=22.0"
   },
   "keywords": [
     "jest",
@@ -17,7 +17,7 @@
     "testing-library"
   ],
   "dependencies": {
-    "@folio/stripes-webpack": "^6.0.0",
+    "@folio/stripes-webpack": "^7.0.0",
     "@jest/globals": "^29.5.0",
     "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",

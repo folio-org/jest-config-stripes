@@ -6,10 +6,10 @@
 * Align `collectCoverageFrom` extensions with `testMatch` to include `.ts` and `.tsx`. Refs STRIPES-1021.
 * Depend on and re-export the default from `axe-core` as `axe`. Refs STRIPES-964.
 * Export `runAxeTest()`. Refs STRIPES-1036.
+* **BREAKING** Bump `engines.node` to `^22`. Refs STRIPES-1041.
 
 ## [3.1.0](https://github.com/folio-org/eslint-config-stripes/tree/v3.1.0) (2026-04-15)
 [Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v3.1.0...v3.0.2)
-
 
 * Want to reexport `@testing-library/react-hooks`? Better depend on it. Refs STRIPES-1014.
 * Fix typo, allowing .ts test files to be properly recognized.
