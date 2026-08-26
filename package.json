@@ -2,6 +2,7 @@
   "name": "@folio/jest-config-stripes",
   "version": "5.0.0",
   "description": "The shared jest configuration for stripes applications and extensions",
+  "type": "module",
   "main": "index.js",
   "repository": {
     "type": "git",
