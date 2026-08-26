@@ -1,6 +1,6 @@
 {
   "name": "@folio/jest-config-stripes",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "The shared jest configuration for stripes applications and extensions",
   "main": "index.js",
   "repository": {
@@ -12,7 +12,10 @@
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=22.0"
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "bin": {
+    "stripes-jest": "stripes-jest.js"
   },
   "keywords": [
     "jest",
@@ -24,11 +27,11 @@
     "@jest/globals": "^30.4.1",
     "@swc/core": "^1.16.0",
     "@swc/jest": "^0.2.39",
-    "@testing-library/dom": "^9.3.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/react-hooks": "^8.0.1",
-    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/user-event": "^14.6.6",
     "@types/jest": "^30.0.0",
     "axe-core": "^4.12.1",
     "jest": "^30.4.2",
