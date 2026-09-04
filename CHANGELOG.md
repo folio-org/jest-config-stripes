@@ -7,6 +7,7 @@
 * Depend on and re-export the default from `axe-core` as `axe`. Refs STRIPES-964.
 * Export `runAxeTest()`. Refs STRIPES-1036.
 * **BREAKING** Bump `engines.node` to `^22`. Refs STRIPES-1041.
+* Update pure-ESM module list: add `keyboardjs`. Refs STRIPES-1046.
 
 ## [3.1.0](https://github.com/folio-org/eslint-config-stripes/tree/v3.1.0) (2026-04-15)
 [Full Changelog](https://github.com/folio-org/eslint-config-stripes/compare/v3.1.0...v3.0.2)
