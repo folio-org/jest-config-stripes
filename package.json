@@ -1,15 +1,22 @@
 {
   "name": "@folio/jest-config-stripes",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "The shared jest configuration for stripes applications and extensions",
+  "type": "module",
   "main": "index.js",
-  "repository": "https://github.com/folio-org/jest-config-stripes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/folio-org/jest-config-stripes.git"
+  },
   "publishConfig": {
     "registry": "https://repository.folio.org/repository/npm-folio/"
   },
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=22.0"
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "bin": {
+    "stripes-jest": "stripes-jest.js"
   },
   "keywords": [
     "jest",
@@ -18,24 +25,25 @@
   ],
   "dependencies": {
     "@folio/stripes-webpack": "^7.0.0",
-    "@jest/globals": "^29.5.0",
-    "@testing-library/dom": "^9.3.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
+    "@jest/globals": "^30.4.1",
+    "@swc/core": "^1.16.0",
+    "@swc/jest": "^0.2.39",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.2",
     "@testing-library/react-hooks": "^8.0.1",
-    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/user-event": "^14.6.6",
+    "@types/jest": "^30.0.0",
     "axe-core": "^4.12.1",
-    "babel-jest": "^29.5.0",
-    "babel-plugin-module-resolver": "^5.0.0",
-    "jest": "^29.5.0",
+    "jest": "^30.4.2",
     "jest-canvas-mock": "^2.5.1",
     "jest-css-modules": "^2.1.0",
-    "jest-environment-jsdom": "^29.5.0",
-    "jest-junit": "^16.0.0",
-    "jest-location-mock": "^1.0.9",
-    "jsdom": "^22.1.0"
+    "jest-environment-jsdom": "^30.4.1",
+    "jest-junit": "^17.0.0",
+    "jest-location-mock": "^4.0.1",
+    "jsdom": "^30.0.1"
   },
   "resolutions": {
-    "@types/jest": "^29.5.14"
+    "@types/jest": "^30"
   }
 }
