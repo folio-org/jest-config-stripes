@@ -18,6 +18,7 @@ const esModules = [
   'inquirer',
   'is-path-inside',
   'jspdf',
+  'keyboardjs',
   'ky',
   'query-string',
   'resolve-from',
