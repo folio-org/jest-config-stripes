@@ -1,5 +1,9 @@
 # Change history for jest-config-stripes
 
+## 5.0.0 IN PROGRESS
+
+* **BREAKING** Supply Jest v30. Convert from CJS to ESM. Refs STRIPES-1042.
+
 ## 4.0.0 IN PROGRESS
 
 * Ship TypeScript declarations for `testing-library/*` re-exports. Refs STRIPES-1020.
