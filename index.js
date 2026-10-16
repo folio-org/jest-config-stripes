@@ -3,32 +3,6 @@ import path from 'node:path';
 import axe from 'axe-core';
 import { runAxeTest } from './lib/runAxeTest.js';
 
-// jest ignores the contents of node_modules when pulling things through
-// babel for transpilation, assuming that modules have been transpiled
-// on publish. this list puts things _back_ on the list of those needing
-// transpilation and includes any module that is distributed uncompiled
-// as pure-ESM.
-const esModules = [
-  '@folio',
-  '@json2csv',
-  'decode-uri-component',
-  'filter-obj',
-  'find-up',
-  'get-stdin',
-  'global-dirs',
-  'import-lazy',
-  'inquirer',
-  'is-path-inside',
-  'jspdf',
-  'keyboardjs',
-  'ky',
-  'query-string',
-  'resolve-from',
-  'resolve-pkg',
-  'split-on-first',
-  'uuid',
-].join('|');
-
 export default {
   axe,
   runAxeTest,
@@ -73,6 +47,6 @@ export default {
         },
       ]
     },
-    transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
+    transformIgnorePatterns: [],
   }
 };

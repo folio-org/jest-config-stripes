@@ -3,6 +3,7 @@
 ## 5.0.0 IN PROGRESS
 
 * **BREAKING** Supply Jest v30. Convert from CJS to ESM. Refs STRIPES-1042.
+* `@swc/jest` is FAST. Just transform all files. Refs STRIPES-1050.
 
 ## 4.0.0 IN PROGRESS
 
