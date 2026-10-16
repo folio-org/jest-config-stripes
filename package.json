@@ -40,7 +40,8 @@
     "jest-environment-jsdom": "^30.5.2",
     "jest-junit": "^17.0.0",
     "jest-location-mock": "^4.0.1",
-    "jsdom": "^30.1.1"
+    "jsdom": "^30.1.1",
+    "regenerator-runtime": "^0.14.1"
   },
   "resolutions": {
     "@types/jest": "^30"

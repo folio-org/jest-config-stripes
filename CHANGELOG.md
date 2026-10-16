@@ -3,6 +3,7 @@
 ## 5.0.0 IN PROGRESS
 
 * **BREAKING** Supply Jest v30. Convert from CJS to ESM. Refs STRIPES-1042.
+* Supply `regenerator-runtime`, previously included only transitively. Refs STRIPES-1055.
 
 ## 4.0.0 IN PROGRESS
 
