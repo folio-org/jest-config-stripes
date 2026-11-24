@@ -3,7 +3,8 @@
   "version": "5.0.0",
   "description": "The shared jest configuration for stripes applications and extensions",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/folio-org/jest-config-stripes.git"
@@ -16,7 +17,15 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "bin": {
-    "stripes-jest": "stripes-jest.js"
+    "stripes-jest": "dist/stripes-jest.js"
+  },
+  "files": [
+    "dist",
+    "testing-library"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
   },
   "keywords": [
     "jest",
@@ -44,5 +53,9 @@
   },
   "resolutions": {
     "@types/jest": "^30"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^7.0.2"
   }
 }

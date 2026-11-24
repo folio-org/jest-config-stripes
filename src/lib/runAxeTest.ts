@@ -1,13 +1,14 @@
 import axe from 'axe-core';
+import type { RunOptions } from 'axe-core';
 
-export const axeModuleConfig = {
+export const axeModuleConfig: RunOptions = {
   runOnly: ['wcag2a', 'wcag2aa'],
   rules: {
     'color-contrast': { enabled: false },
   },
 };
 
-function printKeys(o, excludes = [], indentLevel = 0) {
+function printKeys(o: object, excludes: string[] = [], indentLevel = 0): string[] {
   let tabs = '';
   for (let i = 0; i < indentLevel; i++) {
     tabs += '  ';
@@ -15,7 +16,7 @@ function printKeys(o, excludes = [], indentLevel = 0) {
   return Object.keys(o)
     .map((k) => {
       if (!excludes.includes(k)) {
-        return `${tabs}\x1b[1m\x1b[31m${k}: \x1b[0m\x1b[37m${o[k]}\n`;
+        return `${tabs}\x1b[1m\x1b[31m${k}: \x1b[0m\x1b[37m${(o as Record<string, unknown>)[k]}\n`;
       }
       return '';
     })
@@ -30,8 +31,15 @@ class AxeError extends Error {
   name = 'AxeError';
 }
 
-export async function runAxeTest(options = {}) {
-  const rootNode = document.getElementById('root');
+export interface RunAxeTestOptions {
+  /** element to test; defaults to the element with id "root" */
+  rootNode?: axe.ElementContext;
+  /** axe run options; defaults to `axeModuleConfig` */
+  config?: RunOptions;
+}
+
+export async function runAxeTest(options: RunAxeTestOptions = {}): Promise<void> {
+  const rootNode = document.getElementById('root') ?? document;
   return await axe
     .run(options.rootNode || rootNode, options.config || axeModuleConfig)
     .then(({ violations }) => {
@@ -47,7 +55,7 @@ export async function runAxeTest(options = {}) {
               2,
             ).join('');
             const failureSummary = `\x1b[1m\x1b[31m    Failure Summary:
-        \x1b[0m\x1b[37m${v.nodes[0].failureSummary.replaceAll('\n', '\n      \x1b[97m-')}`;
+        \x1b[0m\x1b[37m${(v.nodes[0].failureSummary ?? '').replaceAll('\n', '\n      \x1b[97m-')}`;
 
             return `\x1b[1m Issue #${i + 1}: \x1b[3m\x1b[91m${v.id} -\x1b[0m\x1b[1m\x1b[31m ${v.help}
   ${generalKeys}
